@@ -1,22 +1,26 @@
 <ul>
-    <li><a
+    <li><i class="fas fa-home"></i>
+        <a
             class="font-bold text-lg mb-4 bloack"
             href="/tweets"
         >Home</a></li>
-    <li><a
+    <li><i class="fas fa-search"></i>
+        <a
             class="font-bold text-lg mb-4 bloack"
             href="/explore"
         >Explore</a></li>
-    <li><a
+    <li><i class="fas fa-bell"></i>
+        <a
             class="font-bold text-lg mb-4 bloack"
-            href="/#"
+            href="/notifications"
         >Notifications</a></li>
-    <li><a
+    <li><i class="far fa-id-badge"></i>
+        <a
             class="font-bold text-lg mb-4 bloack"
             href="{{ route('profile', auth()->user()->id) }}"
         >Profile</a></li>
-    <li>
-        <form method="POST" action="/logout">
+    <li><i class="fas fa-sign-out-alt"></i>
+        <form method="POST" action="/logout" style="display: inline">
             @csrf
             <button class="font-bold text-lg">Logout</button>
         </form>

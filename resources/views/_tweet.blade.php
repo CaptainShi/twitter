@@ -1,4 +1,4 @@
-<div class="flex p-4 border-b border-b-gray-400">
+<div class="flex p-4 border-b border-b-gray-400" style="position: relative">
     <div class="mr-2 flex-shrink-0">
         <a href="{{ route('profile', $tweet->user->id) }}">
             <img src="{{ $tweet->user->avatar }}"
@@ -14,6 +14,13 @@
         <a href="{{ route('profile', $tweet->user->id) }}">
             <h5 class="font-bold mb-4">{{ $tweet->user->name }}</h5>
         </a>
+        @if (auth()->user()->is($tweet->user))
+            <form action="/tweets/{{ $tweet->id }}/delete" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="text-sm" style="position: absolute; right: 20px; top: 15px;">Delete</button>
+            </form>
+        @endif
         <p class="text-sm mb-3">
             {{ $tweet->body }}
         </p>

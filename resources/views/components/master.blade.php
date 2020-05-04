@@ -20,8 +20,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
-<body>
-<div id="app">
+<body class="flex flex-col min-h-screen">
+<div id="app" class="flex-grow">
     <section class="px-8 py-4 mb-6">
         <header class="container mx-auto">
             <a href="/tweets">

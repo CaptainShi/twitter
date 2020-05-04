@@ -2,7 +2,7 @@
     <section class="px-8">
         <main class="container mx-auto">
             <div class="lg:flex lg:justify-center">
-                <div class="lg:w-32">
+                <div class="lg:w-40">
                     @include('_sidebar_links')
                 </div>
 

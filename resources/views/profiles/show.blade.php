@@ -40,9 +40,13 @@
         </div>
 
         <p class="text-sm">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard
-            dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen
-            book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
+            @if (isset($user->description))
+                {{ $user->description }}
+            @elseif (auth()->user()->isNot($user))
+                This user doesn't have a bio yet!
+            @else
+                Please edit your profile to add a bio!
+            @endif
         </p>
 
     </header>

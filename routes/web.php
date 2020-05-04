@@ -29,6 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/explore', 'ExploreController@index');
     Route::post('/tweets/{tweet}/like', 'TweetLikesController@store');
     Route::delete('/tweets/{tweet}/like', 'TweetLikesController@destroy');
+    Route::delete('tweets/{tweet}/delete', 'TweetController@destroy');
+
+    Route::get('/notifications', 'NotificationsController@index');
 });
 
 Route::get('/profiles/{user}', 'ProfilesController@show')->name('profile');
